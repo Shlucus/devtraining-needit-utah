@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.NeedItUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Utils Script Include for the NeedIt application.</description>
+        <name>NeedItUtils</name>
+        <script><![CDATA[var NeedItUtils = Class.create();
+NeedItUtils.prototype = {
+    initialize: function() {
+    },
+
+	isDatePast: function(strDate) {
+		var rightnow = new GlideDateTime();
+		var testDate = new GlideDateTime(strDate);
+
+		if (testDate.before(rightnow))
+		{
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+	},
+
+	isDateToday: function(strDate)
+	{
+		var rightNow = new GlideDateTime();
+		rightNow = rightNow.getDate();
+
+		var neededDate = new GlideDateTime(strDate);
+		neededDate = neededDate.getDate();
+
+		if (rightNow.equals(neededDate))
+		{
+			return true;
+		}
+		return false;
+	},
+
+	//Ignore: this is an exercise you made for yourself.
+	greetUser: function(bool)
+	{
+		if(bool)
+		{
+			return "Hello person!";
+		}
+	},
+
+    type: 'NeedItUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-27 13:56:12</sys_created_on>
+        <sys_id>4d1a5f2747120210b0c2cbb9316d4310</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>NeedItUtils</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_4d1a5f2747120210b0c2cbb9316d4310</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-27 14:24:56</sys_updated_on>
+    </sys_script_include>
+</record_update>
